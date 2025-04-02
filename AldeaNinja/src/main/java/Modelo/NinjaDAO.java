@@ -35,4 +35,25 @@ public class NinjaDAO {
         return ninjas;
 
     }
+
+    public static void AgregarNinja(Ninja ninja) throws SQLException {
+
+
+        String sql="INSERT INTO Ninja(nombre,rango,id_aldea) VALUES(?,?,?);";
+
+        try(Connection con= Conect.getCon();
+            PreparedStatement ps= con.prepareStatement(sql)) {
+            ps.setString(1,ninja.getNombre());
+            ps.setString(2,ninja.getRango());
+            ps.setInt(3,ninja.getId_aldea());
+
+            int res=ps.executeUpdate();
+            if (res>0){
+                System.out.println("Ninja agregado con exito");
+            }
+
+        } catch (SQLException e) {
+            throw new SQLException("Error al agregar un ninja: "+ e.getMessage());
+        }
+    }
 }

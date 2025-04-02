@@ -23,7 +23,7 @@ public class vistaVerninjasYHabilidades {
                     System.out.println("Aldea: "+ a.getNombre());
                 }
             }
-            System.out.println("---------------Habilidad---------------");
+            System.out.println("---------------Habilidades---------------");
             for (Habilidad h: habilidads){
                 if (n.getId()==h.getId_ninja()){
                     System.out.println("Nombre de la habilidad: " + h.getNombre());

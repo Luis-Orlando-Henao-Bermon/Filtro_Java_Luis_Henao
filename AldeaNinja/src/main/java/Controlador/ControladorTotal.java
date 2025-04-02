@@ -14,15 +14,16 @@ public class ControladorTotal {
         boolean salir=false;
 
         while (salir==false){
-            System.out.println("1. Listar todos los ninjas junto con sus habilidades.\n" +
-                    "2. Mostrar las misiones disponibles para un ninja específico.\n" +
-                    "3. Mostrar las misiones completadas para un ninja específico.\n" +
-                    "4. Asignar una misión a un ninja.\n" +
-                    "5. Marcar una misión como completada.\n" +
-                    "6. Mostrar todas las misiones completadas.\n"+
-                    "7. Registrar una mision. \n"+
-                    "8. Ver Todas las misiones.\n"+
-                    "9. Salir.");
+            System.out.println( "1. Listar todos los ninjas junto con sus habilidades.\n" +
+                                "2. Mostrar las misiones disponibles para un ninja específico.\n" +
+                                "3. Mostrar las misiones completadas para un ninja específico.\n" +
+                                "4. Asignar una misión a un ninja.\n" +
+                                "5. Marcar una misión como completada.\n" +
+                                "6. Mostrar todas las misiones completadas.\n"+
+                                "7. Registrar una mision. \n"+
+                                "8. Ver Todas las misiones.\n"+
+                                "9. Agregar un ninja\n"+
+                                "10. Salir.");
 
             System.out.println("Ingresa una opcion");
 
@@ -100,7 +101,13 @@ public class ControladorTotal {
                     scan.nextLine();
                     break;
 
+
                 case 9:
+
+                    NinjaDAO.AgregarNinja(vistaNinja.agragarNinja());
+
+                    break;
+                case 10:
                     salir=true;
                     break;
 
