@@ -3,7 +3,8 @@
 Las aldeas ninjas desean mejorar la manera en la que manejan las misiones y para esto se contruye una aplicacion en java la cual maneja todas las misiones 
 
 ## Diagrama de clases
-![image](https://github.com/user-attachments/assets/b5152f2d-fa4b-4027-9f99-9ac5b8e4657d)
+![image](https://github.com/user-attachments/assets/4c4f4eee-2724-4a3f-be2a-7f2b0a19c52c)
+
 
 https://drive.google.com/file/d/1O_YsC4LTOK7sTdILhXhg0Ge4PKIRRp8R/view?usp=sharing
 
