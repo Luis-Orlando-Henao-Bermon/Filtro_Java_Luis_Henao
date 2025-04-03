@@ -17,9 +17,17 @@ public class vistaNinja {
         ninja.setRango(scan.nextLine());
 
         System.out.println("Ingresa el id de la aldea");
-        ninja.setId_aldea(scan.nextInt());
-        scan.nextLine();
-
+        int numValido=0;
+        while (numValido==0){
+            try {
+                Scanner scan2=new Scanner(System.in);
+                ninja.setId_aldea(scan2.nextInt());
+                scan.nextLine();
+                numValido=1;
+            } catch (NumberFormatException e) {
+                System.out.println("Por favor ingresa un id de aldea valido");
+            }
+        }
         return ninja;
     }
 }

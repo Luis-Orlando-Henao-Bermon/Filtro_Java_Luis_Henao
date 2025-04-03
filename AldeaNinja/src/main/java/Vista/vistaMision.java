@@ -15,8 +15,21 @@ public class vistaMision {
         m.setDescripcion(scan.nextLine());
         System.out.println("Ingresa el rango de la mision");
         m.setRango(scan.nextLine());
+
         System.out.println("Ingresa la recompensa de la mision");
-        m.setRecompensa(scan.nextLong());
+        int numValido=0;
+        while (numValido==0){
+            try {
+                Scanner scan2=new Scanner(System.in);
+                m.setRecompensa(scan2.nextLong());
+                scan.nextLine();
+                numValido=1;
+            } catch (Exception e) {
+                System.out.println("Por favor ingresa una opcion valida");
+            }
+        }
+
+
 
         return m;
     }

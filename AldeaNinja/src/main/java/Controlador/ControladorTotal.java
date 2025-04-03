@@ -27,18 +27,13 @@ public class ControladorTotal {
 
             System.out.println("Ingresa una opcion");
 
-            int numValido=0;
             int opcion=0;
-            while (numValido==0){
-                try {
-                    opcion=scan.nextInt();
-                    scan.nextLine();
-                    numValido=1;
-                } catch (NumberFormatException e) {
-                    System.out.println("Por favor ingresa una opcion valida");
-                }
+            try {
+                opcion=scan.nextInt();
+            } catch (Exception e) {
+                System.out.println("");
             }
-
+            scan.nextLine();
             switch (opcion){
                 case 1:
                     vistaVerninjasYHabilidades.verNinjas(HabilidadDAO.verHabilidades(), NinjaDAO.verNinjas(), AldeaDao.verAldeas());
@@ -105,12 +100,18 @@ public class ControladorTotal {
                 case 9:
 
                     NinjaDAO.AgregarNinja(vistaNinja.agragarNinja());
-
+                    System.out.println("Preciona Enter para continuar");
+                    scan.nextLine();
                     break;
                 case 10:
                     salir=true;
-                    break;
 
+                    break;
+                default:
+                    System.out.println("Opcion valida ");
+                    System.out.println("Preciona Enter para continuar");
+                    scan.nextLine();
+                    break;
             }
 
         }

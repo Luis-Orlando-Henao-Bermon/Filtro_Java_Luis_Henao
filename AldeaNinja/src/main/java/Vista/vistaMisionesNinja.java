@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class vistaMisionesNinja {
-    private Scanner scan=new Scanner(System.in);
     private List<Mision> misiones;
 
     public vistaMisionesNinja() {
@@ -28,18 +27,22 @@ public class vistaMisionesNinja {
         int numValido=0;
         int idNinja=0;
         while (numValido==0){
+
             try {
+                Scanner scan=new Scanner(System.in);
+                idNinja=0;
                 idNinja=scan.nextInt();
                 scan.nextLine();
                 numValido=1;
-            } catch (NumberFormatException e) {
+            } catch (Exception e) {
                 System.out.println("Por favor ingresa un id valido");
             }
         }
 
         for (MisionNinja mn:misionNinjaList){
-            System.out.println("----------------------------------------------");
             if (mn.getId_ninja()==idNinja){
+                System.out.println("----------------------------------------------");
+
                 for (Mision m:misiones){
                     if (mn.getId_mision()==m.getId()){
                         System.out.println("Descripcion: "+m.getDescripcion());
@@ -47,8 +50,9 @@ public class vistaMisionesNinja {
                         System.out.println("Recompensa: "+m.getRecompensa()+"$");
                     }
                 }
+                System.out.println();
+
             }
-            System.out.println();
         }
     }
 
@@ -60,10 +64,11 @@ public class vistaMisionesNinja {
         int idNinja=0;
         while (numValido==0){
             try {
+                Scanner scan=new Scanner(System.in);
                 idNinja=scan.nextInt();
                 scan.nextLine();
                 numValido=1;
-            } catch (NumberFormatException e) {
+            } catch (Exception e) {
                 System.out.println("Por favor ingresa un id valido");
             }
         }
@@ -79,8 +84,9 @@ public class vistaMisionesNinja {
                         System.out.println("Recompensa: "+m.getRecompensa()+"$");
                     }
                 }
+                System.out.println();
             }
-            System.out.println();
+
         }
     }
 
@@ -88,10 +94,29 @@ public class vistaMisionesNinja {
         MisionNinja mn=new MisionNinja();
 
         System.out.println("Ingresa el id del ninja");
-        mn.setId_ninja(scan.nextInt());
+        int numValido=0;
+        while (numValido==0){
+            try {
+                Scanner scan=new Scanner(System.in);
+                mn.setId_ninja(scan.nextInt());
+                numValido=1;
+            } catch (Exception e) {
+                System.out.println("Por favor ingresa un id valido");
+            }
+        }
 
         System.out.println("Ingresa el id de la mision");
-        mn.setId_mision(scan.nextInt());
+        numValido=0;
+        while (numValido==0){
+            try {
+                Scanner scan=new Scanner(System.in);
+                mn.setId_mision(scan.nextInt());
+                numValido=1;
+            } catch (Exception e) {
+                System.out.println("Por favor ingresa un id valido");
+            }
+        }
+
 
         Date hoy=new Date();
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
@@ -105,10 +130,28 @@ public class vistaMisionesNinja {
         MisionNinja mn=new MisionNinja();
 
         System.out.println("Ingresa el id del ninja");
-        mn.setId_ninja(scan.nextInt());
+        int numValido=0;
+        while (numValido==0){
+            try {
+                Scanner scan=new Scanner(System.in);
+                mn.setId_ninja(scan.nextInt());
+                numValido=1;
+            } catch (Exception e) {
+                System.out.println("Por favor ingresa un id valido");
+            }
+        }
 
         System.out.println("Ingresa el id de la mision");
-        mn.setId_mision(scan.nextInt());
+        numValido=0;
+        while (numValido==0){
+            try {
+                Scanner scan=new Scanner(System.in);
+                mn.setId_mision(scan.nextInt());
+                numValido=1;
+            } catch (Exception e) {
+                System.out.println("Por favor ingresa un id valido");
+            }
+        }
 
         Date hoy=new Date();
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
@@ -132,8 +175,9 @@ public class vistaMisionesNinja {
                         System.out.println("Recompensa: "+m.getRecompensa()+"$");
                     }
                 }
+                System.out.println();
             }
-            System.out.println();
+
         }
     }
 }
